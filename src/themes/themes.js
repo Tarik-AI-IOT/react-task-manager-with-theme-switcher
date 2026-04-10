@@ -1,4 +1,4 @@
-const themes = {
+export const themes = {
   light: {
     backgroundImage: "linear-gradient(100deg, #d4f1ff, #ffffff)",
     color: "#1a150e",

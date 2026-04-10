@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import HeaderThemeSwitcher from "./HeaderThemeSwitcher";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import {themes} from "../../themes/themes";
+
 
 const headerStyle = {
     fontWeight: "bold",
@@ -10,15 +14,12 @@ const headerStyle = {
 }
 
 export default function Header() {
-    const [theme, setTheme] = useState("light");
 
-    const handleChangeTheme = (newTheme) => {
-        setTheme(newTheme);
-    }
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={theme === "light" ? "light" : "darker"}>
-            <HeaderThemeSwitcher onChangeTheme={handleChangeTheme} />
+        <div>
+            <HeaderThemeSwitcher />
             <h1 style={headerStyle}>Just do it.</h1>
         </div>
     );

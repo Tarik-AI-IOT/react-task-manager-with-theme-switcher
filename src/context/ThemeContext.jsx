@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 
 export const ThemeContext = createContext();
 
-export function ThemeProvider ({Children}) {
+export function ThemeProvider ({children}) {
     const [theme, setTheme] = useState("light");
 
     const handleChangeTheme = (newTheme) => {
@@ -12,7 +12,7 @@ export function ThemeProvider ({Children}) {
 
     return (
         <ThemeContext.Provider value={{ theme, handleChangeTheme }}>
-            {Children}
+            {children}
         </ThemeContext.Provider>
     );
 

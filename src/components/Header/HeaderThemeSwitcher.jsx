@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./HeaderThemeSwitcher.module.css";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
+import { themes } from "../../themes/themes";
 
 
-export default function HeaderThemeSwitcher({ onChangeTheme }) {
+export default function HeaderThemeSwitcher() {
 
-    const { handleChangeTheme } = useContext(ThemeContext);
+    const { handleChangeTheme, theme } = useContext(ThemeContext);
 
     return (
         <div className={styles.container}>
