@@ -20,7 +20,7 @@ export default function Header() {
     return (
         <div>
             <HeaderThemeSwitcher />
-            <h1 style={headerStyle}>Just do it.</h1>
+            <h1 style={{...headerStyle, color: themes[theme].color}}>Just do it.</h1>
         </div>
     );
 }
