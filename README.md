@@ -1,16 +1,47 @@
-# React + Vite
+# React Task Manager with Theme Context
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple task management web application built with React to practice modern UI styling, component-based architecture, and global state management using React Context.
 
-Currently, two official plugins are available:
+This project focuses on building clean layouts, reusable components, and dynamic theme customization using `useContext`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add and delete tasks
+- Responsive card-based layout
+- Dynamic theme switching
+- Global theme management using Context API
+- Modern UI styling with CSS
+- Clean component structure
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- React
+- JavaScript (ES6+)
+- CSS Modules
+- Flexbox
+- React Context API
+- useContext Hook
+- Responsive Design
+
+---
+
+## Theme Management (Context API)
+
+This project uses a `ThemeContext` to manage the application's color theme globally.
+
+Instead of passing theme props through multiple components, the app uses:
+
+- `createContext`
+- `useContext`
+- Context Provider
+
+This allows any component to access and update the theme easily.
+
+### Example usage
+
+```javascript
+const { theme, setTheme } = useContext(ThemeContext);
