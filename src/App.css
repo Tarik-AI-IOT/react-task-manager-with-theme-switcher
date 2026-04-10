@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 3%;
+    background-color: #267bc5;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+.light {
+    background-color: #d4f1ff;
+    color: #1a150e;
+    transition: 0.3s linear;
+}
+
+.darker {
+    background-color: #001214;
+    color: white;
+    transition: 0.3s linear;
+}
