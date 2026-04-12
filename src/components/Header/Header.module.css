@@ -1,0 +1,38 @@
+.headerStyle {
+    text-align: center;
+    margin: 50px auto 20px auto;
+    min-height: 25vh;
+
+    font-size: 5rem;
+    min-height: 25vh;
+    border-right: solid 3px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.20rem;
+    max-width: 480px;
+    width: fit-content;
+    animation: animated-text 2s steps(11, end) 0.5s 1 normal both,
+    animated-cursor 750ms steps(11,end) infinite;
+}
+
+#title.darker-title {
+    animation: animated-text 2s steps(11,end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(11,end) infinite;
+}
+
+
+  @keyframes animated-text{
+    from{width: 0%;}
+    to{width: 480px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-right-color: rgba(0, 0, 0, 0.75);}
+    to{border-right-color: transparent;}
+  }
+
+  @keyframes darker-animated-cursor {
+    from{border-right-color: #01394c;}
+    to{border-right-color: transparent;}
+  }
