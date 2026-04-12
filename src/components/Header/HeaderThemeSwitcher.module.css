@@ -2,17 +2,27 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    justify-content: right;
+    justify-content: flex-end;
     margin-right: 3%;
     
 }
 
 .themeSwitcher {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
     cursor: pointer;
-    border: solid 2px #fff;
+    border: 2px solid #fff;
 }
 
+.themeSwitcher:hover {
+    box-shadow: white 0 0 10px;
+    cursor: pointer;
+}
 
+@media (max-width: 1000px) {
+    .container {
+        justify-content: center;
+    }
+    
+}

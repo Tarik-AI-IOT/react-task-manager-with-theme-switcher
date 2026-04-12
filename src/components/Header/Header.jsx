@@ -6,11 +6,10 @@ import {themes} from "../../themes/themes";
 
 
 const headerStyle = {
-    fontWeight: "bold",
     textAlign: "center",
     margin: "70px 0",
     minHeight: "25vh",
-    fontSize: "3em",
+    fontSize: "4rem",
 }
 
 export default function Header() {
