@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import {themes} from "../../themes/themes";
 import styles from "./Header.module.css";
-
+import GitHubCorner from "./GitHubCorner";
 
 
 export default function Header() {
@@ -13,8 +13,11 @@ export default function Header() {
 
     return (
         <div>
+            <GitHubCorner styles={styles} />
             <HeaderThemeSwitcher />
-            <h1 className={styles.headerStyle} style={{color: themes[theme].color}}>Just do it.</h1>
+            <div className={styles.titleWrapper}>
+                <h1 className={styles.headerStyle} style={{color: themes[theme].color}}>Just do it.</h1>
+            </div>
         </div>
     );
 }

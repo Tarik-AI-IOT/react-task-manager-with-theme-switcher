@@ -1,38 +1,51 @@
-.headerStyle {
-    text-align: center;
-    margin: 50px auto 20px auto;
-    min-height: 25vh;
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 50px auto 20px;
+}
 
-    font-size: 5rem;
-    min-height: 25vh;
-    border-right: solid 3px rgba(0, 0, 0, 0.75);
+.headerStyle {
+    font-size: 5.2rem;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: 0.20rem;
-    max-width: 480px;
-    width: fit-content;
-    animation: animated-text 2s steps(11, end) 0.5s 1 normal both,
-    animated-cursor 750ms steps(11,end) infinite;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    display: inline-block;
+    width: 0;
+    border-right: 2px solid currentColor;
+    animation:
+        typing 2.5s steps(11, end) 0.5s forwards,
+        blink 1.1s step-end infinite;
 }
 
-#title.darker-title {
-    animation: animated-text 2s steps(11,end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(11,end) infinite;
+.headerStyle::after {
+    content: none;
 }
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 12ch;
+    }
+}
 
-  @keyframes animated-text{
-    from{width: 0%;}
-    to{width: 480px;}
-  }
-  
-  /* cursor animations */
-  
-  @keyframes animated-cursor{
-    from{border-right-color: rgba(0, 0, 0, 0.75);}
-    to{border-right-color: transparent;}
-  }
+@keyframes blink {
+    0%, 49% {
+        border-color: currentColor;
+    }
+    50%, 100% {
+        border-color: transparent;
+    }
+}
 
-  @keyframes darker-animated-cursor {
-    from{border-right-color: #01394c;}
-    to{border-right-color: transparent;}
-  }
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
