@@ -14,9 +14,13 @@ function App() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!inputTask.title.trim()) return;
-        setTaskList(prev => [...prev, inputTask]);
+        setTaskList(prev => [...prev, { id: crypto.randomUUID(), ...inputTask }]);
         setInputTask({ title: '' });
     }
+
+    const handleDelete = (deleteId) => {
+        setTaskList(prev => prev.filter(item => item.id !== deleteId));
+    };
 
   const { theme } = useContext(ThemeContext);
 
@@ -29,7 +33,7 @@ function App() {
       <Header />
       <Task handleSubmit={handleSubmit} inputTask={inputTask} setInputTask={setInputTask} />
       <TimeZone />
-      <Tasklist tasks={taskList} />
+      <Tasklist handleDelete={handleDelete} tasks={taskList} />
     </div>
 
   )

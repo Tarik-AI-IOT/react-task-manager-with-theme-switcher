@@ -36,7 +36,7 @@ const style = {
 
     return (
         <form onSubmit={handleSubmit} style={style.form}>
-            <input style={style.input} type="text" name="title" placeholder="Add a task." value={inputTask.title} onChange={(e) => setInputTask(prev => ({...prev, [e.target.name]: e.target.value}))} />
+            <input style={style.input} type="text" name="title" placeholder="Add a task." value={inputTask.title || ''} onChange={(e) => setInputTask(prev => ({...prev, [e.target.name]: e.target.value}))} />
             <button type="submit" style={style.button}>I Got This!</button>
         </form>
     );

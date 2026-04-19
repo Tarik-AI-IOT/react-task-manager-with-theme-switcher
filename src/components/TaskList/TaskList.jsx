@@ -3,7 +3,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import { themes } from '../../themes/themes';
 import { FaCheck, FaTimes } from "react-icons/fa";
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ tasks, handleDelete }) {
     const { theme } = useContext(ThemeContext);
 
 const style = {
@@ -51,11 +51,11 @@ const style = {
     return (
         <div style={style.container}>
             <div style={style.list}>
-                {tasks.map((task, index) => (
-                    <div key={index} className="task" style={style.task}>
+                {tasks.map((task) => (
+                    <div key={task.id} className="task" style={style.task}>
                         {task.title}
                         <div className='task-btn'>
-                            <button style={{color: "#ef4444"}}><FaTimes /></button>
+                            <button onClick={() => handleDelete(task.id)} style={{color: "#ef4444"}}><FaTimes /></button>
                             <button style={{color: "#a855f7"}}><FaCheck /></button>
                         </div>
                     </div>
