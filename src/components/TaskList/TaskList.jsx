@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { themes } from '../../themes/themes';
+import { FaCheck, FaTimes } from "react-icons/fa";
 
 export default function TaskList({ tasks }) {
     const { theme } = useContext(ThemeContext);
@@ -19,6 +20,7 @@ const style = {
     },
 
     task: {
+        alignItems: 'center',
         width: '100%',
         padding: '15px 20px',
         marginBottom: '12px',
@@ -52,6 +54,10 @@ const style = {
                 {tasks.map((task, index) => (
                     <div key={index} className="task" style={style.task}>
                         {task.title}
+                        <div className='task-btn'>
+                            <button style={{color: "#ef4444"}}><FaTimes /></button>
+                            <button style={{color: "#a855f7"}}><FaCheck /></button>
+                        </div>
                     </div>
                 ))}
             </div>
