@@ -6,6 +6,7 @@ import { ThemeContext } from './context/ThemeContext';
 import Task from './components/Task/Task';
 import Tasklist from './components/TaskList/TaskList';
 import TimeZone from './components/Header/TimeZone';
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 function App() {
     const [taskList, setTaskList] = useState(() => {
@@ -15,7 +16,7 @@ function App() {
 
     const [inputTask, setInputTask] = useState({ title: '' });
 
-    
+
     useEffect(() => {
         localStorage.setItem('taskList', JSON.stringify(taskList));
     }, [taskList]);
@@ -51,6 +52,12 @@ function App() {
       <Task handleSubmit={handleSubmit} inputTask={inputTask} setInputTask={setInputTask} />
       <TimeZone />
       <Tasklist handleDelete={handleDelete} handleComplete={handleComplete} tasks={taskList} />
+      <DotLottieReact
+        src="/fox.lottie"
+        loop
+        autoplay
+        style={{ width: '280px', height: '280px', margin: '1rem auto', display: 'block' }}
+      />
     </div>
 
   )
