@@ -8,8 +8,17 @@ import Tasklist from './components/TaskList/TaskList';
 import TimeZone from './components/Header/TimeZone';
 
 function App() {
-    const [taskList, setTaskList] = useState([]);
+    const [taskList, setTaskList] = useState(() => {
+        const storedTasks = localStorage.getItem('taskList');
+        return storedTasks ? JSON.parse(storedTasks) : [];
+    });
+
     const [inputTask, setInputTask] = useState({ title: '' });
+
+    
+    useEffect(() => {
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+    }, [taskList]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
