@@ -8,12 +8,13 @@ import Tasklist from './components/TaskList/TaskList';
 
 function App() {
     const [taskList, setTaskList] = useState([]);
-    const [inputTask, setInputTask] = useState({});
+    const [inputTask, setInputTask] = useState({ title: '' });
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!inputTask.title.trim()) return;
         setTaskList(prev => [...prev, inputTask]);
-        setInputTask({});
+        setInputTask({ title: '' });
     }
 
   const { theme } = useContext(ThemeContext);
@@ -26,7 +27,7 @@ function App() {
     <div>
       <Header />
       <Task handleSubmit={handleSubmit} inputTask={inputTask} setInputTask={setInputTask} />
-      <Tasklist TaskList={taskList} />
+      <Tasklist tasks={taskList} />
     </div>
 
   )
