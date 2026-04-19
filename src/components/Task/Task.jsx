@@ -4,7 +4,7 @@ export default function Task({ handleSubmit, inputTask, setInputTask }) {
 const style = {
     form: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'stretch',
         justifyContent: 'center',
 
         margin: '20px auto',
@@ -15,19 +15,21 @@ const style = {
 
     },
     input: {
-        padding: '10px',
-        width: '500px',
+        flex: 1,
+        minWidth: 0,
+        padding: '12px 16px',
         borderRadius: '25px 0 0 25px',
         fontSize: '1.1rem',
         border: 'none',
         outline: 'none'
     },
     button: {
-        padding: '10px',
+        padding: '12px 20px',
         borderRadius: '0 25px 25px 0',
         fontSize: '1.0rem',
         border: 'none',
-        width: '100px',
+        width: 'auto',
+        whiteSpace: 'nowrap',
         cursor: 'pointer',
 }}
 

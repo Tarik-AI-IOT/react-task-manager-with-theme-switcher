@@ -5,6 +5,7 @@ import { themes } from './themes/themes';
 import { ThemeContext } from './context/ThemeContext';
 import Task from './components/Task/Task';
 import Tasklist from './components/TaskList/TaskList';
+import TimeZone from './components/Header/TimeZone';
 
 function App() {
     const [taskList, setTaskList] = useState([]);
@@ -27,6 +28,7 @@ function App() {
     <div>
       <Header />
       <Task handleSubmit={handleSubmit} inputTask={inputTask} setInputTask={setInputTask} />
+      <TimeZone />
       <Tasklist tasks={taskList} />
     </div>
 
