@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import { themes } from './themes/themes';
 import { ThemeContext } from './context/ThemeContext';
 import Task from './components/Task/Task';
+import Tasklist from './components/TaskList/TaskList';
 
 function App() {
     const [taskList, setTaskList] = useState([]);
@@ -25,6 +26,7 @@ function App() {
     <div>
       <Header />
       <Task handleSubmit={handleSubmit} inputTask={inputTask} setInputTask={setInputTask} />
+      <Tasklist TaskList={taskList} />
     </div>
 
   )
