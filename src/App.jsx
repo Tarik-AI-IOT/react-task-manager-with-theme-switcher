@@ -14,13 +14,18 @@ function App() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!inputTask.title.trim()) return;
-        setTaskList(prev => [...prev, { id: crypto.randomUUID(), ...inputTask }]);
+        setTaskList(prev => [...prev, { id: crypto.randomUUID(), ...inputTask, completed: false }]);
         setInputTask({ title: '' });
     }
 
     const handleDelete = (deleteId) => {
         setTaskList(prev => prev.filter(item => item.id !== deleteId));
     };
+
+    const handleComplete = (completedId) => {
+        setTaskList(prev => prev.map(item => item.id === completedId ? { ...item, completed: !item.completed } : item));
+    };
+
 
   const { theme } = useContext(ThemeContext);
 
@@ -33,7 +38,7 @@ function App() {
       <Header />
       <Task handleSubmit={handleSubmit} inputTask={inputTask} setInputTask={setInputTask} />
       <TimeZone />
-      <Tasklist handleDelete={handleDelete} tasks={taskList} />
+      <Tasklist handleDelete={handleDelete} handleComplete={handleComplete} tasks={taskList} />
     </div>
 
   )
