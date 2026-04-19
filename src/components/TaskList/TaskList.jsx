@@ -52,7 +52,7 @@ const style = {
         <div style={style.container}>
             <div style={style.list}>
                 {tasks.map((task) => (
-                    <div key={task.id} className="task" style={{...style.task, ...(task.completed ? { opacity: 0.5, color: themes[theme].color } : {}) }}>
+                    <div key={task.id} className={`task ${task.deleting ? 'deleting' : ''}`} style={{...style.task, ...(task.completed ? { opacity: 0.5, color: themes[theme].color } : {}) }}>
                         <span>
                             {task.completed ? <s>{task.title}</s> : task.title}
                         </span>

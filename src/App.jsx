@@ -19,7 +19,10 @@ function App() {
     }
 
     const handleDelete = (deleteId) => {
-        setTaskList(prev => prev.filter(item => item.id !== deleteId));
+        setTaskList(prev => prev.map(item => item.id === deleteId ? { ...item, deleting: true } : item));
+        setTimeout(() => {
+            setTaskList(prev => prev.filter(item => item.id !== deleteId));
+        }, 400)
     };
 
     const handleComplete = (completedId) => {
