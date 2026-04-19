@@ -25,6 +25,12 @@
     content: none;
 }
 
+@media (max-width: 768px) {
+    .headerStyle {
+        font-size: 3.2rem;
+    }
+}
+
 @keyframes typing {
     from {
         width: 0;
